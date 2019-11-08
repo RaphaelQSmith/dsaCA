@@ -4,10 +4,10 @@ public class Person {
 	
 	private String name;
 	private String lastName;
-	private int dateOfArrival;
-	private int passport;
+	private String dateOfArrival;
+	private String passport;
 	private String priority;
-	private int ID;
+	private String ID;
 	
 	public Person() {
 		
@@ -15,7 +15,7 @@ public class Person {
 	
 	@Override
 	public String toString() {
-		return "Name: " + this.getName();
+		return "Name: " + this.name;
 	}
 	
 	public String getName() {
@@ -34,19 +34,19 @@ public class Person {
 		this.lastName = lastName;
 	}
 
-	public int getDateOfArrival() {
+	public String getDateOfArrival() {
 		return dateOfArrival;
 	}
 
-	public void setDateOfArrival(int dateOfArrival) {
+	public void setDateOfArrival(String dateOfArrival) {
 		this.dateOfArrival = dateOfArrival;
 	}
 
-	public int getPassport() {
+	public String getPassport() {
 		return passport;
 	}
 
-	public void setPassport(int passport) {
+	public void setPassport(String passport) {
 		this.passport = passport;
 	}
 
@@ -58,11 +58,11 @@ public class Person {
 		this.priority = priority;
 	}
 
-	public int getID() {
+	public String getID() {
 		return ID;
 	}
 
-	public void setID(int iD) {
+	public void setID(String iD) {
 		ID = iD;
 	}
 

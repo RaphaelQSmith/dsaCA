@@ -5,6 +5,7 @@ public class DoubleLinkedList {
 	private Node first;
 	private Node last;
 	private int size;
+	private Node lastHigh;
 		
 	public DoubleLinkedList() {
 		this.first = null;
@@ -41,6 +42,7 @@ public class DoubleLinkedList {
 		}		
 		newPerson.previous = last;
 		last = newPerson;
+		size++;
 	}
 
 	@Override
@@ -60,22 +62,26 @@ public class DoubleLinkedList {
 		p1.setName("Oblada");
 		Person p3 = new Person();
 		p3.setName("Life goes on");
-		Person p4 = new Person();
+		
 		UserInput input = new UserInput();
 		String option = input.mainMenu();
-		p4.setName(input.inputName());
+		System.out.println("The option selected is " + option);
+		Person p4 = input.createPerson();
+//		p4.setName(input.inputName());
 		
 		
 		DoubleLinkedList gnibList = new DoubleLinkedList();
-		gnibList.addFirst(p2);
-		gnibList.addFirst(p1);
-
-		gnibList.addLast(p3);
-				
+//		gnibList.addFirst(p2);
+//		gnibList.addFirst(p1);
+//
+//		gnibList.addLast(p3);
+//				
 		gnibList.addFirst(p4);
+		gnibList.getSize();
 		
 		
 		System.out.println(gnibList);
+		System.out.println(p4.getPassport());
 		
 		
 		

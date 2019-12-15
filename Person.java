@@ -7,11 +7,7 @@ public class Person {
 	private String dateOfArrival;
 	private String passport;
 	private String priority;
-	private String ID;
-	
-	public Person() {
-		
-	}
+	private int ID;
 	
 	@Override
 	public String toString() {
@@ -58,11 +54,11 @@ public class Person {
 		this.priority = priority;
 	}
 
-	public String getID() {
+	public int getID() {
 		return ID;
 	}
 
-	public void setID(String iD) {
+	public void setID(int iD) {
 		ID = iD;
 	}
 

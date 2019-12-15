@@ -8,5 +8,4 @@ public class Node{
 	public Node(Person person) {
 		this.data = person;
 	}	
-
 }

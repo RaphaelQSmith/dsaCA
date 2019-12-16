@@ -8,6 +8,12 @@ import java.sql.Statement;
 
 public class Database {
 
+	private String fName;
+	private String lName;
+	private String doa;
+	private String passport;
+	private String priority;
+	private String ID;
 
 	public void findCust(String fullname) {
 		{
@@ -15,13 +21,13 @@ public class Database {
 				// Load the database driver
 				Class.forName("com.mysql.jdbc.Driver").newInstance() ;
 				
-				String dbServer = "jdbc:mysql://localhost:3306/ultraVision";
+				String dbServer = "jdbc:mysql://localhost:3306/queue";
 				String user = "root";
-				String password = "ImpossibleToBreak2019!";
-				String query = "SELECT * FROM customers where fullname="+"'"+ fullname+ "'";
+				String password = "Tricolor31!";
+				String query = "SELECT * FROM gnib";
 
 				// Get a connection to the database
-				Connection conn = DriverManager.getConnection(dbServer, user, password) ;
+				Connection conn = DriverManager.getConnection(dbServer, user, password);
 
 				// Get a statement from the connection
 				Statement stmt = conn.createStatement() ;
@@ -29,16 +35,14 @@ public class Database {
 				// Execute the query
 				ResultSet rs = stmt.executeQuery(query) ;
 				
-				
 				// Loop through the result set
 				while(rs.next()) {
 					//Populate variables with customer details from database
-//					id = rs.getString("idcustomer");
-//					name =rs.getString("fullname");
-//					type = rs.getString("type");
-//					loyaltypoints = rs.getString("loyaltypoints");
-//					balance = rs.getString("balance");
-
+					ID = rs.getString("idcustomer");
+					fName =rs.getString("fullname");
+					lName = rs.getString("type");
+					passport = rs.getString("loyaltypoints");
+					priority = rs.getString("balance");
 				}
 				
 				rs.close() ;

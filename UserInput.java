@@ -10,7 +10,7 @@ public class UserInput {
 			Person p = new Person();
 			Node node = new Node(p);
 			Scanner userInput = new Scanner (System.in);
-			
+		// ask user for personal data when creating a new Person
 	    public Person createPerson() {
 //	    	Handle user input
 	    	Person p = new Person();
@@ -27,7 +27,7 @@ public class UserInput {
 //	    	System.out.println("Please enter passport number: ");
 //	    	p.setPassport(userInput.nextLine());
 	    	
-//	    	VALIDATE 'PRIORITY' INPUT
+	    	//	ask for priority and validate inpurt
 	    	String priority;
 			do {
 				System.out.println("Please enter priority level(low, med or high): ");
@@ -36,12 +36,10 @@ public class UserInput {
 	    	p.setPriority(priority);
 			return p;	
 	    }
-	    
+	    // secondary menu used to change person's details
 	    public String changeDetails() {
-	    	System.out.println("Choose a person to change details: ");
-	    	
+	    	System.out.println("Choose a person to change details: ");	
 	    	String optionSelected = null;
-	    	
 	    	do {
 		    	System.out.println("Which details do you want to change?: ");
 		    	System.out.println(

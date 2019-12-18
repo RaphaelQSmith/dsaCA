@@ -4,7 +4,7 @@
 package cct.dsa.ca1;
 
 public class DoubleLinkedList {
-	
+
 	private Node first;
 	private Node last;
 	private Node lastHigh;
@@ -21,14 +21,15 @@ public class DoubleLinkedList {
 		this.id = 1;
 	}
 	
+	//check if queue is empty
 	public boolean listIsEmpty() {
 		return size == 0;
 	}
-	
+	//return size of queue
 	public int getSize() {
 		return size;
 	}
-	
+	//add to first position of the queue
 	public void addFirst(Node newPerson) {
 		
 		if(listIsEmpty()) {
@@ -40,7 +41,7 @@ public class DoubleLinkedList {
 		first = newPerson;
 		size++;
 	}
-	
+	//add to the last position of the queue
 	public void addLast(Node newPerson) {
 		if(listIsEmpty()) {
 			first = newPerson;
@@ -51,7 +52,7 @@ public class DoubleLinkedList {
 		last = newPerson;
 		size++;
 	}
-	
+	//take a target node and adds after it
 	public void addAfter(Node target, Node newNode) {	
 		
 		if(target != null && target.next!= null) {
@@ -68,30 +69,30 @@ public class DoubleLinkedList {
 			size++;
 		}
 	}
+		// 	find node and print its current position in queue
 	public String findNode(String ID){
 		int searchID = Integer.parseInt(ID);
 		
-//        VALIDATE INPUT BEFORE ITERATION
-        if (first == null || ID == null) { 
+		//  check if queue is populated
+        if (listIsEmpty()) { 
             return "\n List is empty! \n"; 
         }
-        Node current = first; 
-        int i; 
-//  	  CHECK EVERY POSITION ON LIST AND RETURN RESULT
-        for (i = 1; current != null && i < size; i++) { 
+     // iterate through queue and return its position
+        Node current = first;  
+        for (int i = 1; current != null && i < size; i++) { 
             if(current.data.getID() == searchID) {
             	return "This person is number " + Integer.toString(i)+ " in the queue.\n";
             }else {
         	current = current.next;
             }
         } 
-//          IF PERSON NOT FOUND
+        //   if person not found
         if (current == null) 
             return "\n Person not found! \n";
-//		   IF THE PERSON IS ON THE LAST POSITION        
+        //  if person is last in queue        
 		return "This person is the last in the queue."; 
     } 
-	
+		//	find person to be removed
 	public void findToRemove(String ID) {
 		int searchID = Integer.parseInt(ID);
 		
@@ -99,9 +100,9 @@ public class DoubleLinkedList {
         	System.out.println("No such ID found.");
 			return; 
         }
+		//	go through queue and remove person matching by ID
 		Node current = first; 
-        int i; 
-		for (i = 1; current != null && i < size; i++) { 
+        for (int i = 1; current != null && i < size; i++) { 
             if(current.data.getID() == searchID) {
             	removeNode(current);
             	return;
@@ -111,9 +112,9 @@ public class DoubleLinkedList {
         } 
 		return;
 	}
-		
+	//	remove person from queue and connect its previous with its next
 	public void removeNode(Node node) { 
-//		###################  ADD REMOVE CONFIRMATION MESSAGE ##################
+
         if (first == null || node == null) { 
             return; 
         } 
@@ -145,6 +146,8 @@ public class DoubleLinkedList {
         size--;
         return; 
     } 
+	/*	receive a number from the user and delete as many as selected 
+		from the back of the queue */
 	public void deleteBatch(int count) {
 		if(count > 0) {
 		for(int i = 1; i<=count;i++ ) {
@@ -153,6 +156,8 @@ public class DoubleLinkedList {
 		};
 	}
 	
+	/*  check priority level from the person to be added to list
+	    and call the corresponding method */
 	public void addToList(Person newPerson) {
 		
 		if(newPerson !=null) {
@@ -160,8 +165,6 @@ public class DoubleLinkedList {
 			id++;
 			
 			Node newNode = new Node(newPerson);	
-	//		Check priority and decide when to add to front, mid  
-	//		or back depending on the priority level
 			if(lastHigh == null && newPerson.getPriority().equals("high")) {
 				addFirst(newNode);
 				lastHigh = newNode;
@@ -183,6 +186,7 @@ public class DoubleLinkedList {
 		}
 	}	
 
+	/* Print queue and its size after any insertion */
 	@Override
 	public String toString() {
 		Node temp = first;

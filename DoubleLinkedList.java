@@ -1,3 +1,6 @@
+/*	Raphael Smith 
+	Student #2017327 */
+
 package cct.dsa.ca1;
 
 public class DoubleLinkedList {
@@ -107,7 +110,6 @@ public class DoubleLinkedList {
             }
         } 
 		return;
-		
 	}
 		
 	public void removeNode(Node node) { 
@@ -115,14 +117,16 @@ public class DoubleLinkedList {
         if (first == null || node == null) { 
             return; 
         } 
-      
         if (first == node) { 
             first = node.next; 
             if(!first.data.getPriority().equals("high")) {
             	lastHigh = null;
             }
         } 
- 
+        if(node == last) {
+        	last = node.previous;
+        	node.previous.next= null;
+        }
         if (node.next != null) { 
         	if(node == lastMed 
         			&& node.previous.data.getPriority().equals("med")) {
@@ -132,14 +136,22 @@ public class DoubleLinkedList {
             }
         	node.next.previous = node.previous; 
         } 
-
+        
         if (node.previous != null) { 
         	node.previous.next = node.next;
-        } 
+        }
+        
     	System.out.println("Person removed from queue");
         size--;
         return; 
     } 
+	public void deleteBatch(int count) {
+		if(count > 0) {
+		for(int i = 1; i<=count;i++ ) {
+			removeNode(last);
+			}
+		};
+	}
 	
 	public void addToList(Person newPerson) {
 		

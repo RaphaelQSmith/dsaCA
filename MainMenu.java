@@ -1,3 +1,6 @@
+/*	Raphael Smith 
+	Student #2017327 */
+
 package cct.dsa.ca1;
 
 import java.util.Scanner;
@@ -23,7 +26,8 @@ public class MainMenu {
         		+ "(2) Search person \n"
         		+ "(3) Remove from queue \n"
         		+ "(4) Change priority \n"
-        		+ "(5) Change details \n")
+        		+ "(5) Change details \n"
+        		+ "(6) Delete batch \n")
         			;
         optionSelected = input.nextLine();
         }while(optionSelected == null || 
@@ -31,7 +35,8 @@ public class MainMenu {
         		!optionSelected.equals("2") &&
         		!optionSelected.equals("3") &&
         		!optionSelected.equals("4") &&
-        		!optionSelected.equals("5") 
+        		!optionSelected.equals("5") &&
+        		!optionSelected.equals("6")        		
         		);
         
         UserInput testOption = new UserInput();
@@ -53,6 +58,8 @@ public class MainMenu {
         	
         }else if(optionSelected.equals("5")) {
         	testOption.changeDetails();
+        }else if(optionSelected.equals("6")) {
+        	immigrationList.deleteBatch(testOption.howManyToDelete());
         }
         mainMenu();
         input.close();

@@ -1,3 +1,6 @@
+/*	Raphael Smith 
+	Student #2017327 */
+
 package cct.dsa.ca1;
 
 public class Person {

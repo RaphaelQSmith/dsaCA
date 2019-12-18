@@ -1,3 +1,6 @@
+/*	Raphael Smith 
+	Student #2017327 */
+
 package cct.dsa.ca1;
 
 import java.util.Scanner;
@@ -78,6 +81,13 @@ public class UserInput {
 	         }
 	    	 	
 	    	return null;
+	    }
+	    public int howManyToDelete() {
+	    	System.out.println("How many persons do you want to remove from the end of the list?: ");
+//			String optionSelected = userInput.nextLine();
+			int count = Integer.parseInt(userInput.nextLine());
+			System.out.println("\n Removing " + count + " people from the end of the queue... \n");
+			return count;
 	    }
 	    
 	}

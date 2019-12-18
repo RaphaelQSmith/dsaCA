@@ -185,7 +185,24 @@ public class DoubleLinkedList {
 			}
 		}
 	}	
-
+	//	find person to change details
+	public Node findDetails(String ID){
+		int searchID = Integer.parseInt(ID);
+		//  check if queue is populated
+        if (listIsEmpty()) { 
+            return null; 
+        }
+     // iterate through queue and return its position
+        Node current = first;  
+        for (int i = 1; current != null && i < size; i++) { 
+            if(current.data.getID() == searchID) {
+            	return current;
+            }else {
+        	current = current.next;
+            }
+        }
+		return current;
+        }
 	/* Print queue and its size after any insertion */
 	@Override
 	public String toString() {

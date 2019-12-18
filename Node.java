@@ -4,6 +4,8 @@
 package cct.dsa.ca1;
 
 public class Node{
+	
+	//	create node carrying data and pointing to neighbours 
 	protected Person data;
 	protected Node next;
 	protected Node previous;

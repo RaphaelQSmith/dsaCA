@@ -5,7 +5,7 @@ package cct.dsa.ca1;
 
 public class Person {
 	// Personal info
-	private String name;
+	private String firstName;
 	private String lastName;
 	private String dateOfArrival;
 	private String passport;
@@ -15,14 +15,14 @@ public class Person {
 	// method used to print person (used in Test class)
 	@Override
 	public String toString() {
-		return "Name: " + this.name;
+		return "Name: " + this.firstName + " " + this.lastName;
 	}
 	// getters and setters
 	public String getName() {
-		return name;
+		return firstName;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.firstName = name;
 	}
 	public String getLastName() {
 		return lastName;
